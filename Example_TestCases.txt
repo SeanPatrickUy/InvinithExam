@@ -1,0 +1,82 @@
+Unit Test Examples
+
+POST /recipes
+
+Request:
+{
+    "name": "Chocolate Cake",
+    "ingredients": "Flour, Eggs, Sugar, Cocoa Powder, Baking Powder",
+    "steps": "Mix ingredients. Bake at 350F for 30 minutes.",
+    "prep_time": 30
+}
+
+---------------------------------------------------------------------------------
+
+GET /recipes
+
+Expected Result:
+[
+    {
+        "id": 1,
+        "name": "Chocolate Cake",
+        "ingredients": "Flour, Eggs, Sugar, Cocoa Powder, Baking Powder",
+        "steps": "Mix ingredients. Bake at 350F for 30 minutes.",
+        "prep_time": 30
+    },
+    ...
+]
+
+---------------------------------------------------------------------------------
+
+GET /recipes/<id>
+
+Expected Response:
+{
+    "id": 1,
+    "name": "Chocolate Cake",
+    "ingredients": "Flour, Eggs, Sugar, Cocoa Powder, Baking Powder",
+    "steps": "Mix ingredients. Bake at 350F for 30 minutes.",
+    "prep_time": 30
+}
+
+---------------------------------------------------------------------------------
+
+PUT /recipes/<id>
+
+Request:
+{
+    "name": "Updated Chocolate Cake",
+    "prep_time": 40
+}
+
+---------------------------------------------------------------------------------
+
+DELETE /recipes/<id>
+
+Expected Response:
+{"message": "Recipe deleted successfully!"}
+
+---------------------------------------------------------------------------------
+
+POST /recipes/<id>/ratings
+
+Request:
+{"rating": 5}
+
+---------------------------------------------------------------------------------
+
+POST /recipes/<id>/comments
+
+Request:
+{"comment": "This recipe is amazing!"}
+
+---------------------------------------------------------------------------------
+
+GET /recipes/<id>/comments
+
+Expected Response:
+[
+    {"id": 1, "text": "This recipe is amazing!"},
+]
+
+---------------------------------------------------------------------------------
